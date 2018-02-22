@@ -200,3 +200,4 @@ s = LinearSystem([p1, p2, p3, p4])
 t = s.compute_rref()
 print(s)
 print('solution {}'.format(t))
+
