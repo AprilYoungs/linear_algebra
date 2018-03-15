@@ -74,13 +74,16 @@ class Vector(object):
             coordinate.append(self.coordinates[i] / s)
         return Vector(coordinate)
 
+
     def magnitude(self):
+        '''向量长度'''
         muly = 0
         for i in self.coordinates:
             muly += i ** 2
         return muly ** Decimal(0.5)
 
     def normalized(self):
+        '''单位向量'''
         try:
             magnitude = self.magnitude()
             return self / magnitude
@@ -88,6 +91,7 @@ class Vector(object):
             raise Exception('Cannot normalize the zero ')
 
     def dot(self, v):
+        '''点乘'''
         assert (len(self.coordinates) == len(v.coordinates))
         return sum([x * y for (x, y) in zip(self.coordinates, v.coordinates)])
 
